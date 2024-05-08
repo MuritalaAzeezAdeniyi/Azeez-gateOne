@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class TaskFour{
+	public static void main(String[] args){
+
+Scanner input = new Scanner(System.in); 
+    double average = 0;
+   int sum = 0;
+ for(int count = 2; count <= 10; count++){
+	System.out.print("Enter scores: ");
+ 	int score = input.nextInt();	
+		sum += score;
+
+		}
+        System.out.println(" sum is:" + sum);
+	
+}
+
+
+
+
+}
