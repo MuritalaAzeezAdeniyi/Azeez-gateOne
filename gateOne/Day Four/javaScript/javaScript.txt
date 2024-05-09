@@ -1,0 +1,21 @@
+char UserInput ='\0';
+char[]firstInput = new char[9];
+				
+for(let count = 0; count < 9; count++){ 
+System.out.println("Enter character and number x - 0");
+firstInput[count] = input.next().charAt(0);
+				  	
+				      }
+for(let count = 1; count < 10; count++)
+System.out.print(firstInput[count] + "  ");	
+         				
+			
+				
+                        }
+
+
+
+
+
+
+} 

@@ -1,23 +1,31 @@
 import java.util.Random;
 import java.util.Scanner;
-public class RandomArithmetic{
+public class TaskOne{
 	public static void main(String[] arg){
 	Scanner input = new Scanner(System.in);
 	 Random generator = new Random();
-	int number = 2;
-	int numberTwo = 5;
-	int check = number + numberTwo;
  	int userAnswer;
+	int pass = 0;
+	int fail = 0;
+    //int[] operators ={"+","-","*","/"};
   for(int count = 1 ; count <= 10; count++){
-  System.out.println(" What is the answer to" + number +" + " + numberTwo + " = ");
+  int numberOne = generator.nextInt(50);
+  int numberTwo = generator.nextInt (30);
+ //string operator = operator[random.generator(5)];     
+  int expectedAnswer = numberOne - numberTwo;
+  System.out.println(" What is the answer to  " + numberOne +" - " + numberTwo + " = ");
   userAnswer = input.nextInt();
-	if(userAnswer == check){
-	 System.out.print(correct);
+	if(userAnswer == expectedAnswer){
+	 System.out.println("correct");
+		pass++;
 	}
 	else{
-		Sysem.out.print(incorrect);    
-		}
+		System.out.println("incorrect");    
+		       fail++;
 	}
+}
+System.out.println("Total passed is " + pass);
+System.out.println ("Total failed is " + fail);
 }
   }
 
