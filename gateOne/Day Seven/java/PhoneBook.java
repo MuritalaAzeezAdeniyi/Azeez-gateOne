@@ -37,7 +37,7 @@ System.out.println("Add more contact(yes or no)");
 response = input.next();
 }while(response.equalsIgnoreCase("yes"));
  System.out.println(name);
- System.out.printlin(lastName);
+ System.out.println(lastName);
  System.out.println(number);
 break;	
 
@@ -45,28 +45,75 @@ case 2:
 System.out.println("Enter number");
  String compare = input.next();
 for(int count = 0; count < number.size();count++){
-	if(number.get(count).equalsto(compare )){
+	if(number.get(count).equals(compare )){
            System.out.println("number");
-	}   
+	   }   
       
-	if(!count.getnumber().equals(compare)){
-		System.out.println("contact not found");
-		}
-
-
-case 3: 
- System.out.print("Enter phone number");
+	if(!number.get(count).equals(compare)){
+		}System.out.println("contact not found");
+	}	
+break;
+case 3:
+System.out.println("Enter phone number");
  String phoneNumber = input.next();
-for(int count = 0; count < number.size();count++){
-	if(count.getnumber().equals(phoneNumber)){
-            System.out.print(number); 
-	}
-	else{
-	      System.out.print("contact not found");
-		}
-
-	}
+ for(int count = 0; count < number.size();count++){
+if(number.get(count).equals(phoneNumber)){
+ 	System.out.println(number); 
+ 	}
+else{
+	System.out.println("contact not found");
+ 	}
 }
+break;
+
+case 4:
+System.out.println("Enter first name");
+String firstName = input.next();
+for(int count =0; count < name.size();count++){
+	if(name.get(count).equals(firstName)){
+		System.out.println(name); 
+	   }
+          else{
+ 		System.out.print("contact not found");
+              }
+ } 
+ break;
+case 5:
+System.out.println("Enter last name");
+String getLastName = input.next();
+for(int count = 0; count <lastName.size();count++){
+	
+	if(name.get(count).equals(getLastName)){
+	     	System.out.println(lastName); 
+	     }
+
+	else{
+ 		System.out.println("contact not found");
+      }
+
+}
+
+break;
+
+case 6: 
+System.out.println("Enter contact you want to edit");
+ String editNumber = input.next();
+for(int count = 0; count < number.size();count++){
+System.out.println(number.get(count) +" - "+editNumber);
+ }
+
+
+
+
+
+
+
+
+
+  
+
+
+
 
 }
 
