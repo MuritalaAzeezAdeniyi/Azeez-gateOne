@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class PhoneBook{
-        public static void main(String  args){
-	ArrayList<String> name = new ArrayList<String>();
-	ArrayList<Integer>number= new ArrayList<Integer>();
+        public static void main(String[]  args){
+	ArrayList<String>name = new ArrayList<String>();
+	ArrayList<String>number= new ArrayList<String>();
 	Scanner input = new Scanner(System.in);
 	String response="";	
- String prompt = """
+        String contactNumber = "";
+String prompt = """
 1 Add contact; 
 2 Remove contact;
 3 Find contact by phone number;
@@ -18,36 +19,35 @@ public class PhoneBook{
 int phoneBook = input.nextInt();
 switch(phoneBook){
 case 1: 
-System.out.print("Add contact");
+System.out.print("Add contact");break;
 case 2: 
-System.out.print("Remove contact");
+System.out.print("Remove contact");break;
 case 3:
-System.out.print("Find contact by phone number");
+System.out.print("Find contact by phone number");break;
 case 4: 
-System.out.print("Find contact by first name");
+System.out.print("Find contact by first name");break;
 case 5:
-System.out.print("Find contact by last name");
+System.out.print("Find contact by last name");break;
 case 6: 
-System.out.print("Edit contact"); 		
+System.out.print("Edit contact");break; 		
 }
-  name.add("contactName");
-  number.add(contactNumber);
+ 
+  
 do{
-System.out.print("Enter name");
+System.out.println("Enter name");
 String contactName = input.next();
-
-System.out.print("Enter number");
- int contactNumber = input.nextInt();
-
-System.out.print("Add more contact(yes or no)");
+ name.add(contactName);
+System.out.println("Enter number");
+ contactNumber = input.next();
+  number.add(contactNumber);
+System.out.println("Add more contact(yes or no)");
 response = input.next();
 
-}while(response.equalsIgnoreCase("no"));
+}while(response.equalsIgnoreCase("yes"));
  System.out.println(name);
  System.out.println(number);
 
-//public void remove_contact(String name);
-//if(this.phoneBook.containsKey(name)) 
+
 
 
 
