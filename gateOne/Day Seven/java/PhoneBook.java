@@ -2,58 +2,76 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class PhoneBook{
         public static void main(String[]  args){
-	ArrayList<String>name = new ArrayList<String>();
-	ArrayList<String>number= new ArrayList<String>();
+	ArrayList<String>name=new ArrayList<String>();
+	ArrayList<String>lastName = new ArrayList<String>();
+	ArrayList<String>number=new ArrayList<String>();
 	Scanner input = new Scanner(System.in);
 	String response="";	
         String contactNumber = "";
+
 String prompt = """
-1 Add contact; 
-2 Remove contact;
-3 Find contact by phone number;
-4 Find contact by first name;
-5 Find contact by last name;
-6 Edit contact;
+1 <- Add contact 
+2 <- Remove contact
+3 <-Find contact by phone number
+4 <-Find contact by first name
+5 <-Find contact by last name
+6 <-Edit contact
+0 <- exit
 """;
- System.out.print(prompt);
+while (true){
+System.out.print(prompt);
 int phoneBook = input.nextInt();
 switch(phoneBook){
-case 1: 
-System.out.print("Add contact");break;
-case 2: 
-System.out.print("Remove contact");break;
-case 3:
-System.out.print("Find contact by phone number");break;
-case 4: 
-System.out.print("Find contact by first name");break;
-case 5:
-System.out.print("Find contact by last name");break;
-case 6: 
-System.out.print("Edit contact");break; 		
-}
- 
-  
+case 1:   
 do{
-System.out.println("Enter name");
+System.out.println("Enter first name");
 String contactName = input.next();
  name.add(contactName);
+System.out.print("Enter last name");
+ String secondName = input.next();
+ lastName.add(secondName);
 System.out.println("Enter number");
  contactNumber = input.next();
-  number.add(contactNumber);
+ number.add(contactNumber);
 System.out.println("Add more contact(yes or no)");
 response = input.next();
-
 }while(response.equalsIgnoreCase("yes"));
  System.out.println(name);
+ System.out.printlin(lastName);
  System.out.println(number);
+break;	
+
+case 2:
+System.out.println("Enter number");
+ String compare = input.next();
+for(int count = 0; count < number.size();count++){
+	if(number.get(count).equalsto(compare )){
+           System.out.println("number");
+	}   
+      
+	if(!count.getnumber().equals(compare)){
+		System.out.println("contact not found");
+		}
 
 
+case 3: 
+ System.out.print("Enter phone number");
+ String phoneNumber = input.next();
+for(int count = 0; count < number.size();count++){
+	if(count.getnumber().equals(phoneNumber)){
+            System.out.print(number); 
+	}
+	else{
+	      System.out.print("contact not found");
+		}
 
+	}
+}
 
+}
 
-
-
-
+}
+ 
 }
 
 
