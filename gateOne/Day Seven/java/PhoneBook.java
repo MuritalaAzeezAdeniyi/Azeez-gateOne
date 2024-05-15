@@ -1,60 +1,107 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class PhoneBook{
-        public static void main(String[]  args){
-	ArrayList<String>name=new ArrayList<String>();
-	ArrayList<String>lastName = new ArrayList<String>();
-	ArrayList<String>number=new ArrayList<String>();
+        
+	static ArrayList<String>name=new ArrayList<String>();
+	static ArrayList<String>lastName = new ArrayList<String>();
+	static ArrayList<String>number=new ArrayList<String>();
 	Scanner input = new Scanner(System.in);
-	String response="";	
-        String contactNumber = "";
+	
 
+
+public static void main(String[]  args){	
+       
+phoneBookMenu();
+}
+
+public static void phoneBookMenu(){
 String prompt = """
+====================================================================
+Hi welcome to Stroggle Abdulazeez phonebook app,select any option to perform.  
 1 <- Add contact 
 2 <- Remove contact
 3 <-Find contact by phone number
-4 <-Find contact by first name
+4 <-Find contact by first name         
 5 <-Find contact by last name
 6 <-Edit contact
 0 <- exit
+===================================================================
 """;
-while (true){
+Scanner input = new Scanner(System.in);
+	
 System.out.print(prompt);
 int phoneBook = input.nextInt();
+
 switch(phoneBook){
-case 1:   
-do{
+case 1-> addContact();   
+case 2-> removeContact();
+case 3-> findContactByPhonenumber();
+case 4-> findContactByFirstName();
+case 5-> findContactByLastName();
+//case 6-> Edit contact();
+}
+ 	}
+
+public static void addContact(){
+
+Scanner input = new Scanner(System.in);
+
 System.out.println("Enter first name");
 String contactName = input.next();
- name.add(contactName);
+name.add(contactName);
+
 System.out.print("Enter last name");
  String secondName = input.next();
  lastName.add(secondName);
-System.out.println("Enter number");
- contactNumber = input.next();
- number.add(contactNumber);
-System.out.println("Add more contact(yes or no)");
-response = input.next();
-}while(response.equalsIgnoreCase("yes"));
- System.out.println(name);
- System.out.println(lastName);
- System.out.println(number);
-break;	
 
-case 2:
 System.out.println("Enter number");
+ String contactNumber = input.next();
+ number.add(contactNumber);
+	addAnotherCountact();
+phoneBookMenu();
+}
+
+public static void addAnotherCountact(){
+
+Scanner input = new Scanner(System.in);
+	
+System.out.println("Add more contact(yes or no)");
+String response = input.next();
+  
+if(response.equalsIgnoreCase("yes")){
+	addContact();
+	}
+else{
+System.out.println("Contacts added Succeesuflly>>>>>>>>>>>>>>>>>>>");
+
+}
+phoneBookMenu();    
+}
+ 
+public static void removeContact(){
+
+Scanner input = new Scanner(System.in);
+	
+
+System.out.println("Enter  number");
  String compare = input.next();
 for(int count = 0; count < number.size();count++){
-	if(number.get(count).equals(compare )){
-	   number.remove(count);
-           System.out.println(number);
+	
+	  if(number.get(count).equals(compare )){
+	   number.remove(number);
+           //System.out.println(number);
 	   }   
       
 	if(!(number.get(count).equals(compare))){
-		}System.out.println("contact not found");
+	System.out.println("contact not found");
 	}	
-break;
-case 3:
+} 
+phoneBookMenu();    
+}
+
+public static void findContactByPhonenumber(){
+Scanner input = new Scanner(System.in);
+	
 System.out.println("Enter phone number");
  String phoneNumber = input.next();
  for(int count = 0; count < number.size();count++){
@@ -65,9 +112,13 @@ else{
 	System.out.println("contact not found");
  	}
 }
-break;
+phoneBookMenu();    
 
-case 4:
+}
+public static void findContactByFirstName(){
+
+Scanner input = new Scanner(System.in);
+	
 System.out.println("Enter first name");
 String firstName = input.next();
 for(int count =0; count < name.size();count++){
@@ -78,8 +129,14 @@ for(int count =0; count < name.size();count++){
  		System.out.print("contact not found");
               }
  } 
- break;
-case 5:
+phoneBookMenu(); 
+}
+
+public static void findContactByLastName(){
+
+Scanner input = new Scanner(System.in);
+	
+
 System.out.println("Enter last name");
 String getLastName = input.next();
 for(int count = 0; count <lastName.size();count++){
@@ -93,15 +150,17 @@ for(int count = 0; count <lastName.size();count++){
       }
 
 }
+phoneBookMenu(); 
+}
 
-break;
+}
 
-case 6: 
-System.out.println("Enter contact you want to edit");
- String editNumber = input.next();
-for(int count = 0; count < number.size();count++){
-System.out.println(number.get(count) +" - "+editNumber);
- }
+ //case 6: 
+//System.out.println("Enter contact you want to edit");
+ //String editNumber = input.next();
+//for(int count = 0; count < number.size();count++){
+//System.out.println(number.get(count) +" - "+editNumber);
+ //}
 
 
 
@@ -116,12 +175,12 @@ System.out.println(number.get(count) +" - "+editNumber);
 
 
 
-}
 
-}
+
+//}
  
-}
+//}
 
 
 
-}
+//}
