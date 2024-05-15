@@ -46,10 +46,11 @@ System.out.println("Enter number");
  String compare = input.next();
 for(int count = 0; count < number.size();count++){
 	if(number.get(count).equals(compare )){
-           System.out.println("number");
+	   number.remove(count);
+           System.out.println(number);
 	   }   
       
-	if(!number.get(count).equals(compare)){
+	if(!(number.get(count).equals(compare))){
 		}System.out.println("contact not found");
 	}	
 break;
