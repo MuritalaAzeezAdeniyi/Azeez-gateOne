@@ -89,7 +89,7 @@ for(int count = 0; count < number.size();count++){
 	
 	  if(number.get(count).equals(compare )){
 	   number.remove(number);
-           //System.out.println(number);
+           System.out.println(number);
 	   }   
       
 	if(!(number.get(count).equals(compare))){
@@ -153,16 +153,10 @@ for(int count = 0; count <lastName.size();count++){
 phoneBookMenu(); 
 }
 
+
 }
 
- //case 6: 
-//System.out.println("Enter contact you want to edit");
- //String editNumber = input.next();
-//for(int count = 0; count < number.size();count++){
-//System.out.println(number.get(count) +" - "+editNumber);
- //}
-
-
+ 
 
 
 
@@ -177,10 +171,7 @@ phoneBookMenu();
 
 
 
-//}
  
-//}
 
 
 
-//}
