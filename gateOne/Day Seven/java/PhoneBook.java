@@ -85,11 +85,13 @@ Scanner input = new Scanner(System.in);
 
 System.out.println("Enter  number");
  String compare = input.next();
-for(int count = 0; count < number.size();count++){
+for(int count = 0; count > number.size();count){
 	
 	  if(number.get(count).equals(compare )){
-	   number.remove(number);
-           System.out.println(number);
+	   number.remove(count);
+           name.remove(count);
+	   lastName.remove(count);
+	System.out.println(number);
 	   }   
       
 	if(!(number.get(count).equals(compare))){
@@ -152,8 +154,23 @@ for(int count = 0; count <lastName.size();count++){
 }
 phoneBookMenu(); 
 }
-
-
+public static void editContact(){
+System.out.print("Enter you wise to edit");
+String userInput = input.next();
+for(int count =0; count < contactNumber.size();coun++){
+	
+	if(contactNumber.get(count).equals(userInput)){
+		System.out.print("Enter new number you wise to save);
+		String newNumber = input.next();
+		System.out.print("Enter new name you wise to replace old name")
+		String newName = input.next();
+		System.out.print("Enter new last name you wise to replace old last name);
+	String newLastName = input.next();
+	
+	contactNumber.set(count,new String[]{newNumber,newName,newLastName});
+	}
+    }
+phoneBookMenu(); 
 }
 
  
